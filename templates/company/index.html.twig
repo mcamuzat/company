@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Company index{% endblock %}
+
+{% block body %}
+    <h1>Company index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Siren</th>
+                <th>Immatriculation_city</th>
+                <th>Immatriculation_date</th>
+                <th>Capital</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for company in companies %}
+            <tr>
+                <td>{{ company.id }}</td>
+                <td>{{ company.name }}</td>
+                <td>{{ company.siren }}</td>
+                <td>{{ company.immatriculationCity }}</td>
+                <td>{{ company.immatriculationDate ? company.immatriculationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ company.capital }}</td>
+                <td>
+                    <a href="{{ path('company_show', {'id': company.id}) }}">show</a>
+                    <a href="{{ path('company_edit', {'id': company.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('company_new') }}">Create new</a>
+{% endblock %}
