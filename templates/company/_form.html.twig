@@ -6,16 +6,17 @@
     {{ form_row(form.capital) }}
     {{ form_row(form.form) }}
 
-    <h3>Addresses</h3>
+    <h3>Adresses</h3>
     <ul class="addresses" data-prototype="{{ form_widget(form.addresses.vars.prototype)|e('html_attr') }}">
-        <button type="button" class="add_item_link" data-collection-holder-class="addresses">Add an address</button>
+        <button type="button" class="add_item_link" data-collection-holder-class="addresses">Ajouter une adresse</button>
         {% for address in form.addresses %}
         <li>
             {{ form_row(address.number) }}
             {{ form_row(address.type) }}
             {{ form_row(address.name) }}
             {{ form_row(address.zipcode) }}
-            {{ form_row(address.city) }}
+            {{ form_row(address.city) }}  
+         
         </li>
         {% endfor %}
     </ul>

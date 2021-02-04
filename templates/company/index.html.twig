@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Company index{% endblock %}
+{% block title %}sociétés{% endblock %}
 
 {% block body %}
-    <h1>Company index</h1>
+    <h1>sociétés</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Siren</th>
-                <th>Immatriculation_city</th>
-                <th>Immatriculation_date</th>
+                <th>Ville d'immatriculation</th>
+                <th>Date d'immatriculation</th>
                 <th>Capital</th>
                 <th>actions</th>
             </tr>
@@ -27,17 +27,17 @@
                 <td>{{ company.immatriculationDate ? company.immatriculationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ company.capital }}</td>
                 <td>
-                    <a href="{{ path('company_show', {'id': company.id}) }}">show</a>
-                    <a href="{{ path('company_edit', {'id': company.id}) }}">edit</a>
+                    <a href="{{ path('company_show', {'id': company.id}) }}">voir</a>
+                    <a href="{{ path('company_edit', {'id': company.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Pas de société</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('company_new') }}">Create new</a>
+    <a href="{{ path('company_new') }}">Ajouter</a>
 {% endblock %}

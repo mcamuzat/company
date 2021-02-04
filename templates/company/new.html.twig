@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Company{% endblock %}
+{% block title %}Nouvelle société{% endblock %}
 
 {% block body %}
-<h1>Create new Company</h1>
+<h1>Nouvelle société</h1>
 
 {{ include('company/_form.html.twig') }}
 
-<a href="{{ path('company_index') }}">back to list</a>
+<a href="{{ path('company_index') }}">Retour à la liste</a>
 {% endblock %}
 
 {% block javascripts %}
 <script>
-    jQuery(document).ready(function () {
+      jQuery(document).ready(function () {
         // Get the ul that holds the collection of tags
         var $tagsCollectionHolder = $('ul.addresses');
         // count the current form inputs we have (e.g. 2), use that as the new
@@ -67,7 +67,7 @@
 
 
     function addTagFormDeleteLink($tagFormLi) {
-        var $removeFormButton = $('<button type="button">Delete this tag</button>');
+        var $removeFormButton = $('<button type="button">Supprimer cette adresse</button>');
         $tagFormLi.append($removeFormButton);
 
         $removeFormButton.on('click', function (e) {

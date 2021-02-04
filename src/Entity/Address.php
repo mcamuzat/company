@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AddressRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=AddressRepository::class)
@@ -42,7 +43,11 @@ class Address
      */
     private $zipcode;
 
+
     /**
+     * 
+     * @Ignore()
+     *
      * @ORM\ManyToOne(targetEntity=Company::class, inversedBy="addresses")
      */
     private $company;

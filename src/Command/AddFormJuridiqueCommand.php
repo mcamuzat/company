@@ -25,13 +25,12 @@ class AddFormJuridiqueCommand extends Command
     {
         $this
             ->setDescription('Charge la liste des formes juridiques ')
-            ->addArgument('file', InputArgument::REQUIRED, 'Argument description');
+            ->addArgument('file', InputArgument::REQUIRED, 'nom du fichier');
 
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
         $file = $input->getArgument('file');
         $types = explode("\n", file_get_contents($file));
 

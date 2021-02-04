@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Company{% endblock %}
+{% block title %}Editer la société{% endblock %}
 
 {% block body %}
-    <h1>Edit Company</h1>
+    <h1>Modifier la société</h1>
 
     {{ include('company/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('company_index') }}">back to list</a>
+    <a href="{{ path('company_index') }}">Retour à la liste</a>
 
     {{ include('company/_delete_form.html.twig') }}
 {% endblock %}
@@ -68,7 +68,7 @@
 
 
     function addTagFormDeleteLink($tagFormLi) {
-        var $removeFormButton = $('<button type="button">Delete this tag</button>');
+        var $removeFormButton = $('<button type="button">Supprimer cette adresse</button>');
         $tagFormLi.append($removeFormButton);
 
         $removeFormButton.on('click', function (e) {
